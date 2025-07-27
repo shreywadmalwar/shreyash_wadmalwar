@@ -90,7 +90,7 @@ const Projects = () => {
           variants={containerVariants}
         >
           <motion.div 
-            className="text-center mb-16"
+            className="text-left mb-16"
             variants={itemVariants}
           >
             <p className="text-xl text-gray-400 font-bold mb-2">The Experience</p>

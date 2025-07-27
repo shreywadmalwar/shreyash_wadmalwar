@@ -121,10 +121,10 @@ const SkillCard = ({ skill, skillIndex, categoryIndex }) => {
       initial={{ opacity: 0, y: 50 }}
       animate={controls}
     >
-      <div className="glass rounded-xl p-6 min-h-20 w-fit min-w-full transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-white/10 cursor-pointer">
-        <div className="flex items-center space-x-4">
-          <skill.icon className={`text-4xl ${skill.color} flex-shrink-0`} />
-          <h3 className="text-white font-light text-lg whitespace-nowrap">{skill.name}</h3>
+      <div className="glass rounded-xl p-4 md:p-6 min-h-16 md:min-h-20 w-full transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-white/10 cursor-pointer">
+        <div className="flex items-center space-x-3 md:space-x-4">
+          <skill.icon className={`text-2xl md:text-4xl ${skill.color} flex-shrink-0`} />
+          <h3 className="text-white font-light text-sm md:text-lg truncate">{skill.name}</h3>
         </div>
       </div>
       
@@ -146,16 +146,16 @@ const Skills = () => {
   return (
     <section id="skills" className="py-20 flex items-center bg-gradient-to-br from-black via-gray-900 to-black relative">
       <div className="container mx-auto px-6">
-        <h2 className="text-5xl font-bold text-white text-center mb-16">Skills</h2>
-        <div className="max-w-6xl mx-auto p-8">
+        <h2 className="text-3xl md:text-5xl font-bold text-white text-center mb-12 md:mb-16">Skills</h2>
+        <div className="max-w-6xl mx-auto p-4 md:p-8">
           {skillCategories.map((category, categoryIndex) => (
-            <div key={categoryIndex} className="mb-20">
-              <div className="flex">
-                <div className="w-1/4">
-                  <h3 className="text-4xl font-bold text-white font-mono">{category.title}</h3>
+            <div key={categoryIndex} className="mb-12 md:mb-20">
+              <div className="flex flex-col md:flex-row">
+                <div className="w-full md:w-1/4 mb-6 md:mb-0">
+                  <h3 className="text-2xl md:text-4xl font-bold text-white font-mono">{category.title}</h3>
                 </div>
-                <div className="w-3/4">
-                  <div className="flex flex-wrap gap-4">
+                <div className="w-full md:w-3/4">
+                  <div className="flex flex-wrap gap-3 md:gap-4">
                     {category.skills.map((skill, skillIndex) => (
                       <SkillCard key={skillIndex} skill={skill} skillIndex={skillIndex} categoryIndex={categoryIndex} />
                     ))}

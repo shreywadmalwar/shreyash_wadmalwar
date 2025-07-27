@@ -5,13 +5,13 @@ const Contact = ({ isDrawerOpen, setIsDrawerOpen }) => {
 
   return (
     <>
-      <section id="contact" className="py-20 flex items-center bg-gradient-to-br from-black via-gray-900 to-black relative">
+      <section id="contact" className="py-20 mb-20 flex items-center bg-gradient-to-br from-black via-gray-900 to-black relative">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
-            <h3 className="text-4xl font-normal text-white whitespace-nowrap mb-2">
+            <h3 className="text-2xl md:text-4xl font-normal text-white mb-2">
               FROM CONCEPT TO <span className="font-bold">CREATION</span>
             </h3>
-            <h3 className="text-4xl font-normal text-white whitespace-nowrap mt-3 mb-8">
+            <h3 className="text-2xl md:text-4xl font-normal text-white mt-3 mb-8">
               LET'S MAKE IT <span className="font-bold">HAPPEN!</span>
             </h3>
             
@@ -38,7 +38,7 @@ const Contact = ({ isDrawerOpen, setIsDrawerOpen }) => {
             className="absolute inset-0 bg-black/50"
             onClick={() => setIsDrawerOpen(false)}
           />
-          <div className="bg-white dark:bg-gray-900 fixed bottom-0 left-0 right-0 mx-auto w-full max-w-xl rounded-t-[10px] border border-gray-200 dark:border-gray-700 px-6 pb-6 sm:px-8 z-50">
+          <div className="bg-white dark:bg-gray-900 fixed bottom-0 left-0 right-0 mx-auto w-full max-w-xl rounded-t-[10px] border border-gray-200 dark:border-gray-700 px-6 pb-6 sm:px-8 mb-10 z-50">
             <div className="mx-auto mt-4 h-2 w-[100px] rounded-full bg-black/10 dark:bg-white/20" />
             
             <div className="flex my-6 justify-center gap-4">
