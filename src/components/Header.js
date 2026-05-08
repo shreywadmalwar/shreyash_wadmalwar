@@ -49,6 +49,16 @@ const Header = ({ activeSection, scrollToSection, openContactDrawer }) => {
                   )}
                 </button>
               ))}
+              <a
+                href="/resume.docx"
+                download="Shreyash_Wadmalwar_Resume.docx"
+                className="text-sm text-gray-300 hover:text-white transition-colors px-3 py-1 flex items-center gap-1"
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                </svg>
+                Resume
+              </a>
               <button
                 onClick={openContactDrawer}
                 className="text-sm text-gray-300 hover:text-white transition-colors px-3 py-1 flex items-center gap-1"
@@ -135,6 +145,18 @@ const Header = ({ activeSection, scrollToSection, openContactDrawer }) => {
                 {item.name}
               </button>
             ))}
+            <a
+              href="/resume.docx"
+              download="Shreyash_Wadmalwar_Resume.docx"
+              onClick={() => setIsMenuOpen(false)}
+              className="w-full text-left text-3xl py-4 border-b border-white/10 text-gray-300 hover:text-white transition-all duration-300 flex items-center gap-3 truncate"
+              style={{ transitionDelay: `${sections.length * 100}ms` }}
+            >
+              <svg className="w-6 h-6 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+              </svg>
+              Resume
+            </a>
             <button
               onClick={() => {
                 openContactDrawer();
