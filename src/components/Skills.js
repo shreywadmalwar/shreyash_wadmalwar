@@ -4,7 +4,7 @@ import {
   FaReact, FaJs, FaHtml5, FaCss3Alt, FaNodeJs, FaPhp, FaGitAlt, FaNpm, FaWordpress, FaDatabase 
 } from 'react-icons/fa';
 import { 
-  SiRedux, SiTailwindcss, SiWebpack, SiMysql 
+  SiRedux, SiTailwindcss, SiWebpack, SiMysql, SiTypescript, SiNextdotjs, SiPostgresql, SiRedis 
 } from 'react-icons/si';
 import { 
   MdDevices, MdApi, MdDataObject 
@@ -22,11 +22,13 @@ const skillCategories = [
     title: 'FrontEnd',
     skills: [
       { name: 'ReactJS', icon: FaReact, startDate: '2023-04-18', color: 'text-blue-400' },
+      { name: 'Next.js', icon: SiNextdotjs, startDate: '2023-04-18', color: 'text-white' },
       { name: 'JavaScript (ES6+)', icon: FaJs, startDate: '2023-04-18', color: 'text-yellow-400' },
+      { name: 'TypeScript', icon: SiTypescript, startDate: '2023-04-18', color: 'text-blue-500' },
       { name: 'Redux', icon: SiRedux, startDate: '2024-06-01', color: 'text-purple-400' },
+      { name: 'Tailwind CSS', icon: SiTailwindcss, startDate: '2023-07-01', color: 'text-teal-400' },
       { name: 'HTML5', icon: FaHtml5, startDate: '2023-04-18', color: 'text-orange-400' },
       { name: 'CSS3', icon: FaCss3Alt, startDate: '2023-04-18', color: 'text-blue-400' },
-      { name: 'Tailwind CSS', icon: SiTailwindcss, startDate: '2023-07-01', color: 'text-teal-400' },
       { name: 'Responsive UI Design', icon: MdDevices, startDate: '2023-04-18', color: 'text-green-400' }
     ]
   },
@@ -52,7 +54,9 @@ const skillCategories = [
     title: 'Databases',
     skills: [
       { name: 'MySQL', icon: SiMysql, startDate: '2023-04-18', color: 'text-blue-400' },
-      { name: 'SQLite', icon: FaDatabase, startDate: '2024-06-01', color: 'text-gray-400' }
+      { name: 'PostgreSQL', icon: SiPostgresql, startDate: '2023-04-18', color: 'text-blue-300' },
+      { name: 'Redis', icon: SiRedis, startDate: '2023-04-18', color: 'text-red-500' },
+      { name: 'ClickHouse', icon: FaDatabase, startDate: '2023-04-18', color: 'text-yellow-400' }
     ]
   }
 ];

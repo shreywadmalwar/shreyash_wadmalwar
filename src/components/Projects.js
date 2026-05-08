@@ -35,29 +35,26 @@ const Projects = () => {
   const experience = {
     period: 'APR 2023 - Present',
     company: 'Brainstorm Force',
-    location: 'Remote work',
+    location: 'Pune, India',
     role: 'Software Developer',
     projects: [
       {
-        title: 'SureDash (Community Dashboard Product)',
+        title: 'OttoKit — Automation Platform',
         achievements: [
-          'Migrated a legacy WordPress dashboard to a React-based UI (using Force UI and Tailwind) with pixel-perfect fidelity to Figma designs.',
-          'Developed reusable React components and custom PHP REST APIs, replacing legacy AJAX calls and boosting application speed by 25%.',
-          'Implemented backend logic (PHP/MySQL) and secure user authentication flows, improving reliability and performance.'
+          'Engineered AI-powered OttoKit Forms with drag-and-drop builder and public form deployment.',
+          'Built OttoKit Tables (Zapier-style data management) with CRUD operations, field customization, and plan-based tiering.',
+          'Architected Global Variables system with encryption for secure secret management across workflows.',
+          'Optimized API performance by 25% through REST refactoring, Redis caching, and async job queue optimization.',
+          'Designed event-driven architecture with 50+ domain events enabling real-time automation across 170+ integrations via WebSocket.',
+          'Built WordPress plugin integrations for Store Engine, LatePoint, and SureDash enabling e-commerce and booking automation.'
         ]
       },
       {
-        title: 'SureMembers (Membership Plugin Product)',
+        title: 'SureDash — Community Dashboard',
         achievements: [
-          'Migrated legacy admin panels to a React front-end, powered by custom PHP REST endpoints.',
-          'Redesigned the UI for a clean, consistent UX across WordPress plugins.'
-        ]
-      },
-      {
-        title: 'OttoKit (Automation Product)',
-        achievements: [
-          'Built integrations with 170+ platforms like Zoho Suite and Jira Cloud using their external REST APIs.',
-          'Created custom actions and triggers for these apps to automate user workflows.'
+          'Led React migration from WordPress monolith to Next.js, improving performance by 25%.',
+          'Developed reusable React components with optimized PHP REST APIs replacing legacy AJAX.',
+          'Integrated Giphy for GIF insertion and built post duplication feature for content creators.'
         ]
       }
     ]
@@ -147,7 +144,7 @@ const Projects = () => {
                   
                   <div className="mt-8 pt-6 border-t border-white/10">
                     <div className="flex flex-wrap gap-3">
-                      {['React', 'JavaScript (ES6+)', 'PHP (Laravel)', 'MySQL', 'Tailwind CSS', 'REST APIs', 'WordPress'].map((tech, index) => (
+                      {['React', 'Next.js', 'TypeScript', 'PHP (Laravel)', 'Node.js', 'MySQL', 'PostgreSQL', 'Redis', 'Tailwind CSS', 'REST APIs', 'WordPress'].map((tech, index) => (
                         <span
                           key={index}
                           className="bg-white/10 border border-white/20 text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-white/20 transition-all duration-300"

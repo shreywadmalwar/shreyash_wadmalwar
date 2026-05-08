@@ -8,10 +8,10 @@ const Hero = ({ scrollToSection }) => {
           Shreyash Wadmalwar
         </h1>
         <p className="text-lg md:text-xl lg:text-2xl text-gray-300 mb-6 md:mb-8 font-light">
-          React Developer | Full Stack Developer
+          Full Stack Developer
         </p>
         <p className="text-base md:text-lg text-gray-400 mb-8 md:mb-12 max-w-2xl mx-auto font-light">
-          Building scalable SaaS products with modern web technologies
+          3+ years shipping production SaaS features · React, Next.js, Node.js, PHP · 140,000+ users globally
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <button

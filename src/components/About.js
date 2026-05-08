@@ -20,14 +20,11 @@ const About = () => {
               
               <div className="space-y-6 text-lg text-gray-300 leading-relaxed">
                 <p>
-                  I'm Shreyash Wadmalwar, a proactive full-stack developer passionate about creating dynamic web experiences. 
-                  From frontend to backend, I thrive on solving complex problems with clean, efficient code. My expertise spans 
-                  React, PHP (Laravel), and MySQL, and I'm always eager to learn more.
+                  Full Stack Developer with 3+ years of experience shipping production SaaS features at scale. Specialized in React, Next.js, Node.js, and PHP with expertise in building complex automation platforms and high-performance applications serving 140,000+ users globally.
                 </p>
                 
                 <p>
-                  When I'm not immersed in work, I'm exploring new ideas and staying curious. Life's about balance, 
-                  and I love embracing every part of it.
+                  Built mission-critical features like OttoKit Tables, OttoKit Forms, and led the SureDash migration from WordPress monolith to Next.js achieving a 25% performance gain.
                 </p>
                 
                 <p className="font-medium text-white">
