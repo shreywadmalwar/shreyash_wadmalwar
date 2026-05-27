@@ -8,15 +8,15 @@ const Projects = () => {
     const handleScroll = () => {
       const experienceSection = document.getElementById('projects');
       if (!experienceSection) return;
-      
+
       const sectionTop = experienceSection.offsetTop;
       const sectionHeight = experienceSection.offsetHeight;
       const scrollTop = window.scrollY;
       const windowHeight = window.innerHeight;
-      
+
       const sectionStart = sectionTop - windowHeight;
       const sectionEnd = sectionTop + sectionHeight;
-      
+
       if (scrollTop >= sectionStart && scrollTop <= sectionEnd) {
         const progress = Math.min((scrollTop - sectionStart) / (sectionEnd - sectionStart), 1);
         setScrollProgress(progress);
@@ -28,14 +28,14 @@ const Projects = () => {
     };
 
     window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Initialize on mount.
+    handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const experience = {
-    period: 'APR 2023 - Present',
+    period: 'APR 2023 – Present',
     company: 'Brainstorm Force',
-    location: 'Pune, India',
+    location: 'Remote, India',
     role: 'Software Developer',
     projects: [
       {
@@ -81,7 +81,8 @@ const Projects = () => {
   };
 
   return (
-    <section id="projects" className="py-20 bg-gradient-to-br from-gray-900 via-black to-gray-900 relative">
+    <section id="projects" className="py-24 bg-gradient-to-br from-gray-900 via-black to-gray-900 relative">
+      <div className="section-divider absolute top-0 left-0 right-0" />
       <div className="container mx-auto px-6">
         <motion.div
           initial="hidden"
@@ -89,76 +90,72 @@ const Projects = () => {
           viewport={{ once: true, margin: "-100px" }}
           variants={containerVariants}
         >
-          <motion.div 
-            className="text-left mb-16"
-            variants={itemVariants}
-          >
-            <p className="text-xl text-gray-400 font-bold mb-2">The Experience</p>
-            <h2 className="text-6xl font-bold text-white">
+          <motion.div className="text-left mb-16" variants={itemVariants}>
+            <p className="text-sm tracking-[0.3em] uppercase text-blue-400 font-medium mb-3">The Experience</p>
+            <h2 className="text-4xl md:text-6xl font-bold text-white leading-tight">
               Experience That<br />
               Brings{' '}
-              <span className="bg-gradient-to-r from-blue-500 to-pink-500 bg-clip-text text-transparent animate-gradient-x bg-[length:200%_200%] pr-1">
+              <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent animate-gradient-x bg-[length:200%_200%] pr-1">
                 Ideas to Life
               </span>
             </h2>
           </motion.div>
-          
+
           <div className="max-w-6xl mx-auto">
-            <motion.div
-              variants={itemVariants}
-              className="flex flex-col lg:flex-row gap-12"
-            >
+            <motion.div variants={itemVariants} className="flex flex-col lg:flex-row gap-12">
+              {/* Left sidebar */}
               <div className="lg:w-1/3">
                 <div className="sticky top-24">
-                  <div className="text-gray-400 text-sm font-medium mb-2">{experience.period}</div>
-                  <h3 className="text-2xl font-bold text-white mb-2">{experience.company}</h3>
-                  <div className="text-gray-400 text-sm">{experience.location}</div>
+                  <div className="glass-strong rounded-2xl p-6 glow-blue">
+                    <div className="text-blue-400 text-sm font-medium mb-3 tracking-wide">{experience.period}</div>
+                    <h3 className="text-2xl font-bold text-white mb-2">{experience.company}</h3>
+                    <div className="text-gray-400 text-sm mb-4">{experience.location}</div>
+                    <div className="w-full h-px bg-gradient-to-r from-blue-500/50 to-transparent mb-4" />
+                    <div className="text-white font-medium">{experience.role}</div>
+                  </div>
                 </div>
               </div>
 
+              {/* Progress bar */}
               <div className="hidden lg:flex flex-col items-center">
-                <div className="relative w-1 h-96 bg-white/20 rounded-full overflow-hidden">
-                  <div 
-                    className="absolute top-0 left-0 w-full bg-gradient-to-b from-blue-500 to-purple-500 rounded-full transition-all duration-300 ease-out"
+                <div className="relative w-1 bg-white/10 rounded-full overflow-hidden" style={{ height: '100%', minHeight: '500px' }}>
+                  <div
+                    className="absolute top-0 left-0 w-full bg-gradient-to-b from-blue-500 via-purple-500 to-pink-500 rounded-full transition-all duration-300 ease-out"
                     style={{ height: `${scrollProgress * 100}%` }}
                   />
                 </div>
               </div>
 
+              {/* Right content */}
               <div className="lg:w-2/3">
-                <div className="glass rounded-2xl p-8">
-                  <h4 className="text-2xl font-bold text-white mb-6">{experience.role}</h4>
-                  
-                  <div className="space-y-8">
-                    {experience.projects.map((project, index) => (
-                      <div key={index} className="border-l-2 border-blue-400/30 pl-6">
-                        <h5 className="text-xl font-semibold text-white mb-2">{project.title}</h5>
-                        {project.description && (
-                          <p className="text-gray-400 text-sm mb-4">{project.description}</p>
-                        )}
-                        <ul className="space-y-3">
-                          {project.achievements.map((achievement, achIndex) => (
-                            <li key={achIndex} className="flex items-start text-gray-300 leading-relaxed">
-                              <span className="text-blue-400 mr-3 mt-2 text-xs">•</span>
-                              <span>{achievement}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    ))}
-                  </div>
-                  
-                  <div className="mt-8 pt-6 border-t border-white/10">
-                    <div className="flex flex-wrap gap-3">
-                      {['React', 'Next.js', 'TypeScript', 'PHP (Laravel)', 'Node.js', 'MySQL', 'PostgreSQL', 'Redis', 'ClickHouse', 'Tailwind CSS', 'REST APIs', 'WordPress', 'MCP', 'OpenAI', 'Claude API', 'AWS'].map((tech, index) => (
-                        <span
-                          key={index}
-                          className="bg-white/10 border border-white/20 text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-white/20 transition-all duration-300"
-                        >
-                          {tech}
-                        </span>
-                      ))}
+                <div className="space-y-8">
+                  {experience.projects.map((project, index) => (
+                    <div key={index} className="glass rounded-2xl p-8 gradient-border transition-all duration-300 hover:bg-white/[0.06]">
+                      <h5 className="text-xl font-bold text-white mb-2">{project.title}</h5>
+                      {project.description && (
+                        <p className="text-gray-400 text-sm mb-6 leading-relaxed">{project.description}</p>
+                      )}
+                      <ul className="space-y-3">
+                        {project.achievements.map((achievement, achIndex) => (
+                          <li key={achIndex} className="flex items-start text-gray-300 leading-relaxed text-[15px]">
+                            <span className="w-1.5 h-1.5 rounded-full bg-blue-400 mr-3 mt-2 flex-shrink-0" />
+                            <span>{achievement}</span>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
+                  ))}
+
+                  {/* Tech tags */}
+                  <div className="flex flex-wrap gap-2.5 pt-4">
+                    {['React', 'Next.js', 'TypeScript', 'PHP (Laravel)', 'Node.js', 'MySQL', 'PostgreSQL', 'Redis', 'ClickHouse', 'Tailwind CSS', 'REST APIs', 'WordPress', 'MCP', 'OpenAI', 'Claude API', 'AWS'].map((tech, index) => (
+                      <span
+                        key={index}
+                        className="glass text-gray-300 px-4 py-2 rounded-full text-sm font-medium hover:bg-white/10 hover:text-white transition-all duration-300 cursor-default"
+                      >
+                        {tech}
+                      </span>
+                    ))}
                   </div>
                 </div>
               </div>

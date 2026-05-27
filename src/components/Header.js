@@ -16,7 +16,8 @@ const Header = ({ activeSection, scrollToSection, openContactDrawer }) => {
     { id: "hero", name: "Home" },
     { id: "about", name: "About" },
     { id: "skills", name: "Skills" },
-    { id: "projects", name: "Projects" },
+    { id: "projects", name: "Experience" },
+    { id: "education", name: "Education" },
   ];
 
   const activeIndex = sections.findIndex(
@@ -40,8 +41,8 @@ const Header = ({ activeSection, scrollToSection, openContactDrawer }) => {
 
         <nav className="glass rounded-full px-8 py-3 relative z-50">
           <div className="flex items-center space-x-8">
-            <div className="text-lg font-semibold text-white">SW</div>
-            <div className="flex space-x-6">
+            <div className="text-lg font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">SW</div>
+            <div className="flex space-x-5">
               {sections.map((item) => (
                 <button
                   key={item.id}
@@ -96,7 +97,7 @@ const Header = ({ activeSection, scrollToSection, openContactDrawer }) => {
       <header className="md:hidden fixed top-0 left-0 right-0 z-50">
         <nav className="glass w-full px-6 py-4">
           <div className="flex items-center justify-between w-full">
-            <div className="text-lg font-semibold text-white">SW</div>
+            <div className="text-lg font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">SW</div>
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}

@@ -14,26 +14,31 @@ const Contact = ({ isDrawerOpen, setIsDrawerOpen }) => {
 
   return (
     <>
-      <section id="contact" className="py-20 mb-20 flex items-center bg-gradient-to-br from-black via-gray-900 to-black relative">
+      <section id="contact" className="py-24 mb-20 flex items-center bg-gradient-to-br from-black via-gray-900 to-black relative">
+        <div className="section-divider absolute top-0 left-0 right-0" />
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
-            <h3 className="text-2xl md:text-4xl font-normal text-white mb-2">
-              FROM CONCEPT TO <span className="font-bold">CREATION</span>
+            <p className="text-sm tracking-[0.3em] uppercase text-blue-400 font-medium mb-6">Get In Touch</p>
+            <h3 className="text-3xl md:text-5xl font-bold text-white mb-3 leading-tight">
+              From Concept to{' '}
+              <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent animate-gradient-x bg-[length:200%_200%]">
+                Creation
+              </span>
             </h3>
-            <h3 className="text-2xl md:text-4xl font-normal text-white mt-3 mb-8">
-              LET'S MAKE IT <span className="font-bold">HAPPEN!</span>
+            <h3 className="text-3xl md:text-5xl font-bold text-white mb-8 leading-tight">
+              Let's Make It Happen
             </h3>
-            
-            <p className="text-lg text-gray-300 mb-4">
+
+            <p className="text-lg text-gray-300 mb-4 max-w-2xl mx-auto">
               From concept to scalable code — I build fast, reliable, and beautiful web experiences.
             </p>
-            <p className="text-lg text-gray-300 mb-12">
+            <p className="text-lg text-gray-400 mb-12">
               Open to full-time roles and freelance collaborations.
             </p>
-            
+
             <button
               onClick={() => setIsDrawerOpen(true)}
-              className="glass text-white px-8 py-3 rounded-full hover:bg-white/20 transition-all"
+              className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-10 py-4 rounded-full hover:from-blue-500 hover:to-purple-500 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25 hover:scale-105 font-medium text-lg"
             >
               Contact Me
             </button>
