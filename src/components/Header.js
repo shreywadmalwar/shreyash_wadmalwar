@@ -1,7 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const Header = ({ activeSection, scrollToSection, openContactDrawer }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  useEffect(() => {
+    if (!isMenuOpen) return;
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') setIsMenuOpen(false);
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isMenuOpen]);
 
   const sections = [
     { id: "hero", name: "Home" },
@@ -50,7 +59,7 @@ const Header = ({ activeSection, scrollToSection, openContactDrawer }) => {
                 </button>
               ))}
               <a
-                href="/resume.docx"
+                href={`${process.env.PUBLIC_URL}/resume.docx`}
                 download="Shreyash_Wadmalwar_Resume.docx"
                 className="text-sm text-gray-300 hover:text-white transition-colors px-3 py-1 flex items-center gap-1"
               >
@@ -90,6 +99,7 @@ const Header = ({ activeSection, scrollToSection, openContactDrawer }) => {
             <div className="text-lg font-semibold text-white">SW</div>
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
               className="text-white p-2 transition-transform duration-300 hover:scale-110"
             >
               <svg
@@ -146,7 +156,7 @@ const Header = ({ activeSection, scrollToSection, openContactDrawer }) => {
               </button>
             ))}
             <a
-              href="/resume.docx"
+              href={`${process.env.PUBLIC_URL}/resume.docx`}
               download="Shreyash_Wadmalwar_Resume.docx"
               onClick={() => setIsMenuOpen(false)}
               className="w-full text-left text-3xl py-4 border-b border-white/10 text-gray-300 hover:text-white transition-all duration-300 flex items-center gap-3 truncate"

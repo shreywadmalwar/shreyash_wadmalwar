@@ -1,8 +1,6 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useMemo } from 'react';
 
 const ScrollIndicator = ({ activeSection, scrollToSection }) => {
-  const [scrollProgress, setScrollProgress] = useState(0);
-
   const sections = useMemo(() => [
     { id: 'hero', name: 'Home' },
     { id: 'about', name: 'About' },
@@ -11,18 +9,8 @@ const ScrollIndicator = ({ activeSection, scrollToSection }) => {
     { id: 'contact', name: 'Contact' }
   ], []);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentIndex = sections.findIndex(section => section.id === activeSection);
-      const progress = currentIndex >= 0 ? (currentIndex + 1) / sections.length : 0;
-      setScrollProgress(progress);
-    };
-
-    handleScroll(); // Initialize on mount.
-    window.addEventListener('scroll', handleScroll);
-    
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [activeSection, sections]);
+  const currentIndex = sections.findIndex(section => section.id === activeSection);
+  const scrollProgress = currentIndex >= 0 ? (currentIndex + 1) / sections.length : 0;
 
   return (
     <div className="fixed right-6 top-1/2 transform -translate-y-1/2 z-50 hidden md:block">

@@ -1,7 +1,8 @@
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useEffect, useState, useCallback, useRef } from 'react';
 
 const FallingStars = () => {
   const [stars, setStars] = useState([]);
+  const timeoutsRef = useRef([]);
 
   const createStar = useCallback(() => ({
     id: Date.now() + Math.random(),
@@ -14,14 +15,19 @@ const FallingStars = () => {
     const spawnStar = () => {
       const star = createStar();
       setStars(prev => [...prev, star]);
-      
-      setTimeout(() => {
+
+      const timeoutId = setTimeout(() => {
         setStars(prev => prev.filter(s => s.id !== star.id));
       }, star.duration * 1000);
+      timeoutsRef.current.push(timeoutId);
     };
 
     const interval = setInterval(spawnStar, 2000);
-    return () => clearInterval(interval);
+    return () => {
+      clearInterval(interval);
+      timeoutsRef.current.forEach(clearTimeout);
+      timeoutsRef.current = [];
+    };
   }, [createStar]);
 
   return (
