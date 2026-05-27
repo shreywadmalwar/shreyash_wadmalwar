@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/shreyash_wadmalwar/static/css/main.2d142635.css",
-    "main.js": "/shreyash_wadmalwar/static/js/main.11d1714f.js",
+    "main.js": "/shreyash_wadmalwar/static/js/main.dcce0c85.js",
     "static/media/IMG_3797.jpg": "/shreyash_wadmalwar/static/media/IMG_3797.c368570f5162cd9717f8.jpg",
     "index.html": "/shreyash_wadmalwar/index.html",
     "main.2d142635.css.map": "/shreyash_wadmalwar/static/css/main.2d142635.css.map",
-    "main.11d1714f.js.map": "/shreyash_wadmalwar/static/js/main.11d1714f.js.map"
+    "main.dcce0c85.js.map": "/shreyash_wadmalwar/static/js/main.dcce0c85.js.map"
   },
   "entrypoints": [
     "static/css/main.2d142635.css",
-    "static/js/main.11d1714f.js"
+    "static/js/main.dcce0c85.js"
   ]
 }
