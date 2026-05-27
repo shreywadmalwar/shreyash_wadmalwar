@@ -30,7 +30,7 @@ const Contact = ({ isDrawerOpen, setIsDrawerOpen }) => {
             </h3>
 
             <p className="text-lg text-gray-300 mb-4 max-w-2xl mx-auto">
-              From concept to scalable code — I build fast, reliable, and beautiful web experiences.
+              From concept to scalable code, I build fast, reliable, and beautiful web experiences.
             </p>
             <p className="text-lg text-gray-400 mb-12">
               Open to full-time roles and freelance collaborations.

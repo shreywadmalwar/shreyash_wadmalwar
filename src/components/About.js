@@ -49,7 +49,7 @@ const About = () => {
                 </motion.p>
 
                 <motion.p variants={itemVariants}>
-                  Built and shipped major features end-to-end — OttoKit Tables, Forms, a customer-facing MCP server platform with multi-LLM support, and led the SureDash migration from WordPress to Next.js with a 25% performance gain.
+                  Built and shipped major features end-to-end: OttoKit Tables, Forms, a customer-facing MCP server platform with multi-LLM support, and led the SureDash migration from WordPress to Next.js with a 25% performance gain.
                 </motion.p>
 
                 <motion.p variants={itemVariants} className="font-medium text-white text-xl">

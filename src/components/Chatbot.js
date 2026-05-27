@@ -10,7 +10,7 @@ const knowledge = {
   github: 'https://github.com/shreywadmalwar',
   location: 'Remote, India',
   company: 'Brainstorm Force',
-  companyPeriod: 'April 2023 – Present',
+  companyPeriod: 'April 2023 - Present',
   summary: 'Full Stack Developer with 3+ years of experience shipping production SaaS features at scale. Specialized in React, Next.js, Node.js, and PHP with expertise in building automation platforms, MCP servers, and AI-powered tooling across 1,500+ connected services.',
   skills: {
     frontend: ['React', 'Next.js', 'JavaScript (ES6+)', 'TypeScript', 'Redux', 'Tailwind CSS', 'HTML5', 'CSS3', 'Responsive UI Design'],
@@ -56,7 +56,7 @@ const knowledge = {
 const qaPatterns = [
   {
     keywords: ['who', 'about', 'yourself', 'introduce', 'tell me about'],
-    answer: () => `${knowledge.name} is a ${knowledge.role} at ${knowledge.company} with 3+ years of experience shipping production SaaS features. He specializes in React, Next.js, Node.js, and PHP — building automation platforms, MCP servers, and AI-powered tooling across 1,500+ connected services.`
+    answer: () => `${knowledge.name} is a ${knowledge.role} at ${knowledge.company} with 3+ years of experience shipping production SaaS features. He specializes in React, Next.js, Node.js, and PHP, building automation platforms, MCP servers, and AI-powered tooling across 1,500+ connected services.`
   },
   {
     keywords: ['contact', 'email', 'reach', 'mail', 'phone', 'call', 'number'],
@@ -68,7 +68,7 @@ const qaPatterns = [
   },
   {
     keywords: ['frontend', 'front-end', 'react', 'next', 'ui'],
-    answer: () => `Shreyash's frontend skills: ${knowledge.skills.frontend.join(', ')}. He's built complex UIs including a visual workflow builder with React Flow, drag-and-drop form builders, and data table interfaces — all with responsive design and accessibility standards.`
+    answer: () => `Shreyash's frontend skills: ${knowledge.skills.frontend.join(', ')}. He's built complex UIs including a visual workflow builder with React Flow, drag-and-drop form builders, and data table interfaces, all with responsive design and accessibility standards.`
   },
   {
     keywords: ['backend', 'back-end', 'server', 'api', 'laravel', 'node', 'php'],
@@ -80,19 +80,19 @@ const qaPatterns = [
   },
   {
     keywords: ['experience', 'work', 'job', 'company', 'where', 'brainstorm'],
-    answer: () => `Shreyash works as a Software Developer at **${knowledge.company}** (${knowledge.companyPeriod}, ${knowledge.location}). He's worked on two major products:\n\n**OttoKit** — ${knowledge.projects[0].description}\n\n**SureDash** — ${knowledge.projects[1].description}`
+    answer: () => `Shreyash works as a Software Developer at **${knowledge.company}** (${knowledge.companyPeriod}, ${knowledge.location}). He's worked on two major products:\n\n**OttoKit** -${knowledge.projects[0].description}\n\n**SureDash** -${knowledge.projects[1].description}`
   },
   {
     keywords: ['ottokit', 'automation', 'workflow', 'zapier'],
-    answer: () => `**OttoKit** — ${knowledge.projects[0].description}\n\nKey achievements:\n${knowledge.projects[0].highlights.map(h => `• ${h}`).join('\n')}`
+    answer: () => `**OttoKit** -${knowledge.projects[0].description}\n\nKey achievements:\n${knowledge.projects[0].highlights.map(h => `• ${h}`).join('\n')}`
   },
   {
     keywords: ['suredash', 'community', 'dashboard', 'migration'],
-    answer: () => `**SureDash** — ${knowledge.projects[1].description}\n\nKey achievements:\n${knowledge.projects[1].highlights.map(h => `• ${h}`).join('\n')}`
+    answer: () => `**SureDash** -${knowledge.projects[1].description}\n\nKey achievements:\n${knowledge.projects[1].highlights.map(h => `• ${h}`).join('\n')}`
   },
   {
     keywords: ['project', 'built', 'build', 'portfolio', 'what have you'],
-    answer: () => `Shreyash has worked on two major products at ${knowledge.company}:\n\n**OttoKit** — ${knowledge.projects[0].description}\nHighlights: MCP server with 1,500+ tools, OttoKit Tables, OttoKit Forms, 25% API performance improvement.\n\n**SureDash** — ${knowledge.projects[1].description}\nHighlights: WordPress to Next.js migration with 25% performance gain.`
+    answer: () => `Shreyash has worked on two major products at ${knowledge.company}:\n\n**OttoKit** -${knowledge.projects[0].description}\nHighlights: MCP server with 1,500+ tools, OttoKit Tables, OttoKit Forms, 25% API performance improvement.\n\n**SureDash** -${knowledge.projects[1].description}\nHighlights: WordPress to Next.js migration with 25% performance gain.`
   },
   {
     keywords: ['education', 'degree', 'college', 'university', 'study', 'school', 'qualification'],
@@ -104,7 +104,7 @@ const qaPatterns = [
   },
   {
     keywords: ['security', 'vulnerability', 'ssrf', 'xss', 'csrf', 'wcag', 'accessibility'],
-    answer: () => `Shreyash has hands-on security experience — he's fixed vulnerabilities including SSRF, XSS, open redirects, and CSS injection. He also improved accessibility to WCAG 2.2 Level AA compliance.`
+    answer: () => `Shreyash has hands-on security experience. He's fixed vulnerabilities including SSRF, XSS, open redirects, and CSS injection. He also improved accessibility to WCAG 2.2 Level AA compliance.`
   },
   {
     keywords: ['performance', 'optimization', 'fast', 'speed', 'improve'],

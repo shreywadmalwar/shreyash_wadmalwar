@@ -33,13 +33,13 @@ const Projects = () => {
   }, []);
 
   const experience = {
-    period: 'APR 2023 – Present',
+    period: 'APR 2023 - Present',
     company: 'Brainstorm Force',
     location: 'Remote, India',
     role: 'Software Developer',
     projects: [
       {
-        title: 'OttoKit — Automation Platform',
+        title: 'OttoKit - Automation Platform',
         description: 'No-code automation platform enabling users to create workflows, build forms, manage data tables, and integrate with 1,500+ external services.',
         achievements: [
           'Built a customer-facing MCP server platform exposing 1,500+ integration actions as AI-callable tools, compatible with Claude Desktop, Cursor IDE, and ChatGPT; built multi-LLM support for 16+ models across OpenAI, Anthropic, and Google.',
@@ -53,7 +53,7 @@ const Projects = () => {
         ]
       },
       {
-        title: 'SureDash — Community Dashboard',
+        title: 'SureDash - Community Dashboard',
         description: 'Community engagement platform for user discussions and content management.',
         achievements: [
           'Led React migration from WordPress monolith to Next.js, improving performance by 25%.',
@@ -117,8 +117,8 @@ const Projects = () => {
               </div>
 
               {/* Progress bar */}
-              <div className="hidden lg:flex flex-col items-center">
-                <div className="relative w-1 bg-white/10 rounded-full overflow-hidden" style={{ height: '100%', minHeight: '500px' }}>
+              <div className="hidden lg:flex flex-col items-center self-stretch">
+                <div className="relative w-1 bg-white/10 rounded-full overflow-hidden h-full">
                   <div
                     className="absolute top-0 left-0 w-full bg-gradient-to-b from-blue-500 via-purple-500 to-pink-500 rounded-full transition-all duration-300 ease-out"
                     style={{ height: `${scrollProgress * 100}%` }}
