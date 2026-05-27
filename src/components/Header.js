@@ -27,7 +27,7 @@ const Header = ({ activeSection, scrollToSection, openContactDrawer }) => {
   return (
     <>
       {/* Desktop Header */}
-      <header className="hidden md:block fixed top-8 left-1/2 transform -translate-x-1/2 z-50">
+      <header className="hidden md:block fixed top-8 left-8 z-50">
         {/* Animated pulse underline */}
         {activeIndex !== -1 && (
           <div
