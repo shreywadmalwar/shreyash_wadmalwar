@@ -20,13 +20,13 @@ const About = () => {
               
               <div className="space-y-6 text-lg text-gray-300 leading-relaxed">
                 <p>
-                  Full Stack Developer with 3+ years of experience shipping production SaaS features at scale. Specialized in React, Next.js, Node.js, and PHP with expertise in building complex automation platforms and high-performance applications serving 140,000+ users globally.
+                  Full Stack Developer with 3+ years of experience shipping production SaaS features at scale. Specialized in React, Next.js, Node.js, and PHP with expertise in building automation platforms, MCP servers, and AI-powered tooling across 1,500+ connected services.
                 </p>
-                
+
                 <p>
-                  Built mission-critical features like OttoKit Tables, OttoKit Forms, and led the SureDash migration from WordPress monolith to Next.js achieving a 25% performance gain.
+                  Built and shipped major features end-to-end — OttoKit Tables, Forms, a customer-facing MCP server platform with multi-LLM support, and led the SureDash migration from WordPress to Next.js with a 25% performance gain.
                 </p>
-                
+
                 <p className="font-medium text-white">
                   I believe in waking up each day eager to make a difference!
                 </p>

@@ -4,6 +4,7 @@ import Hero from './components/Hero';
 import About from './components/About';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
+import Education from './components/Education';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import FallingStars from './components/ShootingStars';
@@ -26,7 +27,7 @@ function App() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['hero', 'about', 'skills', 'projects', 'contact'];
+      const sections = ['hero', 'about', 'skills', 'projects', 'education', 'contact'];
       const scrollPosition = window.scrollY + window.innerHeight / 2;
 
       for (const sectionId of sections) {
@@ -58,6 +59,7 @@ function App() {
       <About />
       <Skills />
       <Projects />
+      <Education />
       <Contact isDrawerOpen={isContactDrawerOpen} setIsDrawerOpen={setIsContactDrawerOpen} />
       <Footer />
     </div>

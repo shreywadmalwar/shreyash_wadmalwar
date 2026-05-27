@@ -1,13 +1,13 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, useAnimation } from 'framer-motion';
-import { 
-  FaReact, FaJs, FaHtml5, FaCss3Alt, FaNodeJs, FaPhp, FaGitAlt, FaNpm, FaWordpress, FaDatabase 
+import {
+  FaReact, FaJs, FaHtml5, FaCss3Alt, FaNodeJs, FaPhp, FaGitAlt, FaNpm, FaWordpress, FaDatabase, FaAws, FaRobot
 } from 'react-icons/fa';
-import { 
-  SiRedux, SiTailwindcss, SiWebpack, SiMysql, SiTypescript, SiNextdotjs, SiPostgresql, SiRedis 
+import {
+  SiRedux, SiTailwindcss, SiWebpack, SiMysql, SiTypescript, SiNextdotjs, SiPostgresql, SiRedis, SiPostman, SiOpenai, SiGooglegemini
 } from 'react-icons/si';
-import { 
-  MdDevices, MdApi, MdDataObject 
+import {
+  MdDevices, MdApi, MdDataObject, MdSmartToy
 } from 'react-icons/md';
 
 const calculateExperience = (startDate) => {
@@ -47,6 +47,8 @@ const skillCategories = [
       { name: 'Git', icon: FaGitAlt, startDate: '2023-04-18', color: 'text-orange-400' },
       { name: 'npm/Yarn', icon: FaNpm, startDate: '2023-04-18', color: 'text-red-400' },
       { name: 'Webpack', icon: SiWebpack, startDate: '2023-08-01', color: 'text-blue-400' },
+      { name: 'Postman', icon: SiPostman, startDate: '2023-04-18', color: 'text-orange-500' },
+      { name: 'AWS Lambda', icon: FaAws, startDate: '2024-01-01', color: 'text-yellow-500' },
       { name: 'AJAX/JSON', icon: MdDataObject, startDate: '2023-04-18', color: 'text-yellow-400' }
     ]
   },
@@ -57,6 +59,16 @@ const skillCategories = [
       { name: 'PostgreSQL', icon: SiPostgresql, startDate: '2023-04-18', color: 'text-blue-300' },
       { name: 'Redis', icon: SiRedis, startDate: '2023-04-18', color: 'text-red-500' },
       { name: 'ClickHouse', icon: FaDatabase, startDate: '2023-04-18', color: 'text-yellow-400' }
+    ]
+  },
+  {
+    title: 'AI & LLM',
+    skills: [
+      { name: 'OpenAI API', icon: SiOpenai, startDate: '2024-06-01', color: 'text-green-400' },
+      { name: 'Anthropic Claude API', icon: FaRobot, startDate: '2024-06-01', color: 'text-orange-300' },
+      { name: 'Google Gemini API', icon: SiGooglegemini, startDate: '2024-06-01', color: 'text-blue-400' },
+      { name: 'MCP Server Dev', icon: MdSmartToy, startDate: '2024-06-01', color: 'text-purple-400' },
+      { name: 'LLM Integration', icon: MdSmartToy, startDate: '2024-06-01', color: 'text-pink-400' }
     ]
   }
 ];

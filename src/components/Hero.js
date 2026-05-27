@@ -11,7 +11,7 @@ const Hero = ({ scrollToSection }) => {
           Full Stack Developer
         </p>
         <p className="text-base md:text-lg text-gray-400 mb-8 md:mb-12 max-w-2xl mx-auto font-light">
-          3+ years shipping production SaaS features · React, Next.js, Node.js, PHP · 140,000+ users globally
+          3+ years shipping production SaaS features · React, Next.js, Node.js, PHP · MCP & AI integrations · 1,500+ connected services
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <button

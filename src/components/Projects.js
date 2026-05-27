@@ -40,21 +40,24 @@ const Projects = () => {
     projects: [
       {
         title: 'OttoKit — Automation Platform',
+        description: 'No-code automation platform enabling users to create workflows, build forms, manage data tables, and integrate with 1,500+ external services.',
         achievements: [
-          'Engineered AI-powered OttoKit Forms with drag-and-drop builder and public form deployment.',
-          'Built OttoKit Tables (Zapier-style data management) with CRUD operations, field customization, and plan-based tiering.',
-          'Architected Global Variables system with encryption for secure secret management across workflows.',
-          'Optimized API performance by 25% through REST refactoring, Redis caching, and async job queue optimization.',
-          'Designed event-driven architecture with 50+ domain events enabling real-time automation across 170+ integrations via WebSocket.',
-          'Built WordPress plugin integrations for Store Engine, LatePoint, and SureDash enabling e-commerce and booking automation.'
+          'Built a customer-facing MCP server platform exposing 1,500+ integration actions as AI-callable tools, compatible with Claude Desktop, Cursor IDE, and ChatGPT; built multi-LLM support for 16+ models across OpenAI, Anthropic, and Google.',
+          'Built OttoKit Forms from scratch with drag-and-drop builder, AI form generation, secure public deployment, and automatic data sync to OttoKit Tables.',
+          'Built OttoKit Tables from scratch with CSV import/export, fulltext search, filters, sorting, linked records, and plan-based row limits using background job processing.',
+          'Built a Global Variables system with encryption for managing secrets securely across workflow executions.',
+          'Improved API performance by 25% using REST refactoring, Redis caching, and async job queues.',
+          'Designed an event-driven system with 50+ domain events for real-time automation across 170+ integrations via WebSocket.',
+          'Fixed security vulnerabilities including SSRF, XSS, open redirects, and CSS injection; improved accessibility to WCAG 2.2 Level AA.',
+          'Built WordPress plugin integrations for Store Engine, LatePoint, and SureDash to support e-commerce and booking automation.'
         ]
       },
       {
         title: 'SureDash — Community Dashboard',
+        description: 'Community engagement platform for user discussions and content management.',
         achievements: [
           'Led React migration from WordPress monolith to Next.js, improving performance by 25%.',
-          'Developed reusable React components with optimized PHP REST APIs replacing legacy AJAX.',
-          'Integrated Giphy for GIF insertion and built post duplication feature for content creators.'
+          'Built reusable component library with optimized PHP REST APIs, replacing legacy AJAX handlers.'
         ]
       }
     ]
@@ -129,7 +132,10 @@ const Projects = () => {
                   <div className="space-y-8">
                     {experience.projects.map((project, index) => (
                       <div key={index} className="border-l-2 border-blue-400/30 pl-6">
-                        <h5 className="text-xl font-semibold text-white mb-4">{project.title}</h5>
+                        <h5 className="text-xl font-semibold text-white mb-2">{project.title}</h5>
+                        {project.description && (
+                          <p className="text-gray-400 text-sm mb-4">{project.description}</p>
+                        )}
                         <ul className="space-y-3">
                           {project.achievements.map((achievement, achIndex) => (
                             <li key={achIndex} className="flex items-start text-gray-300 leading-relaxed">
@@ -144,7 +150,7 @@ const Projects = () => {
                   
                   <div className="mt-8 pt-6 border-t border-white/10">
                     <div className="flex flex-wrap gap-3">
-                      {['React', 'Next.js', 'TypeScript', 'PHP (Laravel)', 'Node.js', 'MySQL', 'PostgreSQL', 'Redis', 'Tailwind CSS', 'REST APIs', 'WordPress'].map((tech, index) => (
+                      {['React', 'Next.js', 'TypeScript', 'PHP (Laravel)', 'Node.js', 'MySQL', 'PostgreSQL', 'Redis', 'ClickHouse', 'Tailwind CSS', 'REST APIs', 'WordPress', 'MCP', 'OpenAI', 'Claude API', 'AWS'].map((tech, index) => (
                         <span
                           key={index}
                           className="bg-white/10 border border-white/20 text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-white/20 transition-all duration-300"
