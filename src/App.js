@@ -7,6 +7,7 @@ import Projects from './components/Projects';
 import Education from './components/Education';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import Chatbot from './components/Chatbot';
 import FallingStars from './components/ShootingStars';
 import ScrollIndicator from './components/ScrollIndicator';
 
@@ -62,6 +63,7 @@ function App() {
       <Education />
       <Contact isDrawerOpen={isContactDrawerOpen} setIsDrawerOpen={setIsContactDrawerOpen} />
       <Footer />
+      <Chatbot />
     </div>
   );
 }
