@@ -20,76 +20,56 @@ const Header = ({ activeSection, scrollToSection, openContactDrawer }) => {
     { id: "education", name: "Education" },
   ];
 
-  const activeIndex = sections.findIndex(
-    (section) => section.id === activeSection
-  );
-
   return (
     <>
-      {/* Desktop Header */}
-      <header className="hidden md:block fixed top-8 left-8 z-50">
-        {/* Animated pulse underline */}
-        {activeIndex !== -1 && (
-          <div
-            className="absolute -top-2 h-2 bg-gradient-to-r from-white/30 via-white/90 to-white/30 backdrop-blur-md rounded-t-full shadow-lg shadow-white/50 animate-pulse transition-all duration-300"
-            style={{
-              left: `${100 + activeIndex * 80}px`,
-              width: `${sections[activeIndex].name.length * 8 + 24}px`,
-            }}
-          />
-        )}
-
-        <nav className="glass rounded-full px-8 py-3 relative z-50">
-          <div className="flex items-center space-x-8">
-            <div className="text-lg font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">SW</div>
-            <div className="flex space-x-5">
-              {sections.map((item) => (
-                <button
-                  key={item.id}
-                  onClick={() => scrollToSection(item.id)}
-                  className={`text-sm transition-colors relative px-3 py-1 ${
-                    activeSection === item.id
-                      ? "text-white"
-                      : "text-gray-300 hover:text-white"
-                  }`}
-                >
-                  {item.name}
-                  {activeSection === item.id && (
-                    <div className="absolute inset-0 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 shadow-lg" />
-                  )}
-                </button>
-              ))}
-              <a
-                href={`${process.env.PUBLIC_URL}/resume.docx`}
-                download="Shreyash_Wadmalwar_Resume.docx"
-                className="text-sm text-gray-300 hover:text-white transition-colors px-3 py-1 flex items-center gap-1"
-              >
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                </svg>
-                Resume
-              </a>
-              <button
-                onClick={openContactDrawer}
-                className="text-sm text-gray-300 hover:text-white transition-colors px-3 py-1 flex items-center gap-1"
-              >
-                <svg
-                  className="w-4 h-4"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M17 8l4 4m0 0l-4 4m4-4H3"
-                  />
-                </svg>
-                Contact Me
-              </button>
-            </div>
+      {/* Desktop Vertical Sidebar */}
+      <header className="hidden md:flex fixed left-6 top-1/2 -translate-y-1/2 z-50 flex-col items-center">
+        <nav className="glass-strong rounded-2xl px-3 py-6 flex flex-col items-center gap-1">
+          {/* Logo */}
+          <div className="text-lg font-bold bg-gradient-to-b from-blue-400 to-purple-400 bg-clip-text text-transparent mb-4">
+            SW
           </div>
+
+          {/* Nav items */}
+          {sections.map((item) => (
+            <button
+              key={item.id}
+              onClick={() => scrollToSection(item.id)}
+              className={`relative w-full text-xs font-medium px-3 py-2.5 rounded-lg transition-all duration-300 text-center whitespace-nowrap ${
+                activeSection === item.id
+                  ? "text-white bg-white/10 border border-white/20"
+                  : "text-gray-400 hover:text-white hover:bg-white/5"
+              }`}
+            >
+              {item.name}
+            </button>
+          ))}
+
+          {/* Divider */}
+          <div className="w-8 h-px bg-white/10 my-2" />
+
+          {/* Resume */}
+          <a
+            href={`${process.env.PUBLIC_URL}/resume.docx`}
+            download="Shreyash_Wadmalwar_Resume.docx"
+            className="flex flex-col items-center gap-1 text-gray-400 hover:text-white transition-colors px-3 py-2.5 rounded-lg hover:bg-white/5"
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+            </svg>
+            <span className="text-[10px]">Resume</span>
+          </a>
+
+          {/* Contact */}
+          <button
+            onClick={openContactDrawer}
+            className="flex flex-col items-center gap-1 text-gray-400 hover:text-white transition-colors px-3 py-2.5 rounded-lg hover:bg-white/5"
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+            <span className="text-[10px]">Contact</span>
+          </button>
         </nav>
       </header>
 
