@@ -1,0 +1,26 @@
+{
+  "short_name": "Shreyash W.",
+  "name": "Shreyash Wadmalwar - Full Stack Engineer",
+  "description": "Portfolio of Shreyash Wadmalwar, a Full Stack Engineer specializing in agentic AI systems and MCP server development.",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any"
+    },
+    {
+      "src": "favicon-64.png",
+      "type": "image/png",
+      "sizes": "64x64"
+    },
+    {
+      "src": "apple-touch-icon.png",
+      "type": "image/png",
+      "sizes": "180x180"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#0b1020",
+  "background_color": "#05070d"
+}
