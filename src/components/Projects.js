@@ -36,28 +36,31 @@ const Projects = () => {
     period: 'APR 2023 - Present',
     company: 'Brainstorm Force',
     location: 'Remote, India',
-    role: 'Software Developer',
+    role: 'Full Stack Engineer',
     projects: [
       {
-        title: 'OttoKit - Automation Platform',
-        description: 'No-code automation platform enabling users to create workflows, build forms, manage data tables, and integrate with 1,500+ external services.',
+        title: 'OttoKit - AI Automation Platform',
+        description: 'No-code automation platform with 1,500+ integrations, used by 12 million+ users.',
         achievements: [
-          'Built a customer-facing MCP server platform exposing 1,500+ integration actions as AI-callable tools, compatible with Claude Desktop, Cursor IDE, and ChatGPT; built multi-LLM support for 16+ models across OpenAI, Anthropic, and Google.',
-          'Built OttoKit Forms from scratch with drag-and-drop builder, AI form generation, secure public deployment, and automatic data sync to OttoKit Tables.',
-          'Built OttoKit Tables from scratch with CSV import/export, fulltext search, filters, sorting, linked records, and plan-based row limits using background job processing.',
+          'Architected and shipped a customer-facing AI Agent system: a multi-turn, tool-calling loop where the LLM autonomously selects from 1,500+ integration actions, executes them, processes results, and loops until the task is complete or a configurable run limit is hit.',
+          'Implemented persistent conversational memory per session: stores the last 20 messages in full, then compresses older history with a lightweight model (Claude Haiku) to keep context relevant without blowing token budgets.',
+          'Integrated 16+ LLM models across OpenAI, Anthropic, and Google via a unified provider abstraction, letting users bring their own key and pick their model (GPT-4o, Claude Sonnet 4, Gemini 2.5 Flash) per agent.',
+          'Built a customer-facing MCP server platform exposing 1,500+ integration actions as AI-callable tools, compatible with Claude Desktop, Cursor IDE, and ChatGPT.',
+          'Designed an event-driven system with 50+ domain events powering real-time automation across 170+ integrations via WebSocket.',
+          'Improved API response time by 25% through REST refactoring, Redis caching, and async job queues.',
+          'Built OttoKit Forms and OttoKit Tables from scratch: drag-and-drop builder with AI form generation, plus CSV import/export, fulltext search, filters, linked records, and plan-based limits via background jobs.',
           'Built a Global Variables system with encryption for managing secrets securely across workflow executions.',
-          'Improved API performance by 25% using REST refactoring, Redis caching, and async job queues.',
-          'Designed an event-driven system with 50+ domain events for real-time automation across 170+ integrations via WebSocket.',
-          'Fixed security vulnerabilities including SSRF, XSS, open redirects, and CSS injection; improved accessibility to WCAG 2.2 Level AA.',
-          'Built WordPress plugin integrations for Store Engine, LatePoint, and SureDash to support e-commerce and booking automation.'
+          'Identified and fixed security vulnerabilities (SSRF, XSS, open redirects, CSS injection) and improved platform accessibility to WCAG 2.2 Level AA.'
         ]
       },
       {
-        title: 'SureDash - Community Dashboard',
+        title: 'SureDash - Community Platform',
         description: 'Community engagement platform for user discussions and content management.',
         achievements: [
-          'Led React migration from WordPress monolith to Next.js, improving performance by 25%.',
-          'Built reusable component library with optimized PHP REST APIs, replacing legacy AJAX handlers.'
+          'Led the React to Next.js migration from a WordPress monolith, reducing page load time by 25% via code splitting, SSR, and lazy loading; improved Core Web Vitals across LCP, CLS, and FID.',
+          'Built a reusable component library with optimized PHP REST APIs, replacing legacy AJAX handlers and reducing bundle size via tree-shaking and dynamic imports.',
+          'Implemented SSG for static content and SSR for dynamic discussion threads, improving SEO and time-to-first-byte.',
+          'Integrated authentication and authorization flows with secure session handling via Next.js middleware.'
         ]
       }
     ]
@@ -148,7 +151,7 @@ const Projects = () => {
 
                   {/* Tech tags */}
                   <div className="flex flex-wrap gap-2.5 pt-4">
-                    {['React', 'Next.js', 'TypeScript', 'PHP (Laravel)', 'Node.js', 'MySQL', 'PostgreSQL', 'Redis', 'ClickHouse', 'Tailwind CSS', 'REST APIs', 'WordPress', 'MCP', 'OpenAI', 'Claude API', 'AWS'].map((tech, index) => (
+                    {['React', 'Next.js', 'TypeScript', 'PHP (Laravel)', 'Node.js', 'Python', 'MySQL', 'PostgreSQL', 'Redis', 'ClickHouse', 'GraphQL', 'WebSockets', 'Tailwind CSS', 'REST APIs', 'WordPress', 'MCP', 'OpenAI', 'Claude API', 'Gemini', 'AWS'].map((tech, index) => (
                       <span
                         key={index}
                         className="glass text-gray-300 px-4 py-2 rounded-full text-sm font-medium hover:bg-white/10 hover:text-white transition-all duration-300 cursor-default"

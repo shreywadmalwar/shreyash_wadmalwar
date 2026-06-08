@@ -1,13 +1,13 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import {
-  FaReact, FaJs, FaHtml5, FaCss3Alt, FaNodeJs, FaPhp, FaGitAlt, FaNpm, FaWordpress, FaDatabase, FaAws, FaRobot
+  FaReact, FaJs, FaHtml5, FaCss3Alt, FaNodeJs, FaPhp, FaPython, FaGitAlt, FaNpm, FaWordpress, FaDatabase, FaAws, FaRobot
 } from 'react-icons/fa';
 import {
-  SiRedux, SiTailwindcss, SiWebpack, SiMysql, SiTypescript, SiNextdotjs, SiPostgresql, SiRedis, SiPostman, SiOpenai, SiGooglegemini
+  SiRedux, SiTailwindcss, SiWebpack, SiMysql, SiTypescript, SiNextdotjs, SiPostgresql, SiRedis, SiPostman, SiOpenai, SiGooglegemini, SiGraphql, SiJest
 } from 'react-icons/si';
 import {
-  MdDevices, MdApi, MdDataObject, MdSmartToy
+  MdDevices, MdApi, MdDataObject, MdSmartToy, MdBolt, MdMemory, MdAccountTree
 } from 'react-icons/md';
 
 const calculateExperience = (startDate) => {
@@ -37,7 +37,10 @@ const skillCategories = [
     skills: [
       { name: 'Node.js (Express)', icon: FaNodeJs, startDate: '2023-08-01', color: 'text-green-400' },
       { name: 'PHP (Laravel)', icon: FaPhp, startDate: '2023-04-18', color: 'text-indigo-400' },
+      { name: 'Python', icon: FaPython, startDate: '2024-06-01', color: 'text-yellow-300' },
       { name: 'RESTful APIs', icon: MdApi, startDate: '2023-04-18', color: 'text-cyan-400' },
+      { name: 'GraphQL', icon: SiGraphql, startDate: '2024-01-01', color: 'text-pink-400' },
+      { name: 'WebSockets', icon: MdBolt, startDate: '2023-10-01', color: 'text-yellow-400' },
       { name: 'WordPress Plugins', icon: FaWordpress, startDate: '2023-05-01', color: 'text-blue-400' }
     ]
   },
@@ -46,6 +49,7 @@ const skillCategories = [
     skills: [
       { name: 'Git', icon: FaGitAlt, startDate: '2023-04-18', color: 'text-orange-400' },
       { name: 'npm/Yarn', icon: FaNpm, startDate: '2023-04-18', color: 'text-red-400' },
+      { name: 'Jest', icon: SiJest, startDate: '2023-09-01', color: 'text-red-500' },
       { name: 'Webpack', icon: SiWebpack, startDate: '2023-08-01', color: 'text-blue-400' },
       { name: 'Postman', icon: SiPostman, startDate: '2023-04-18', color: 'text-orange-500' },
       { name: 'AWS Lambda', icon: FaAws, startDate: '2024-01-01', color: 'text-yellow-500' },
@@ -64,11 +68,13 @@ const skillCategories = [
   {
     title: 'AI & LLM',
     skills: [
+      { name: 'Agentic AI Systems', icon: MdAccountTree, startDate: '2024-06-01', color: 'text-purple-300' },
+      { name: 'Tool-Calling Loops', icon: MdSmartToy, startDate: '2024-06-01', color: 'text-pink-400' },
+      { name: 'Persistent Memory', icon: MdMemory, startDate: '2024-06-01', color: 'text-cyan-300' },
+      { name: 'MCP Server Dev', icon: MdSmartToy, startDate: '2024-06-01', color: 'text-purple-400' },
       { name: 'OpenAI API', icon: SiOpenai, startDate: '2024-06-01', color: 'text-green-400' },
       { name: 'Anthropic Claude', icon: FaRobot, startDate: '2024-06-01', color: 'text-orange-300' },
-      { name: 'Google Gemini', icon: SiGooglegemini, startDate: '2024-06-01', color: 'text-blue-400' },
-      { name: 'MCP Server Dev', icon: MdSmartToy, startDate: '2024-06-01', color: 'text-purple-400' },
-      { name: 'LLM Integration', icon: MdSmartToy, startDate: '2024-06-01', color: 'text-pink-400' }
+      { name: 'Google Gemini', icon: SiGooglegemini, startDate: '2024-06-01', color: 'text-blue-400' }
     ]
   }
 ];

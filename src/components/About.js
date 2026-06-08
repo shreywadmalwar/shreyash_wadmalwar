@@ -36,7 +36,7 @@ const About = () => {
               <motion.div className="mb-10" variants={itemVariants}>
                 <p className="text-sm tracking-[0.3em] uppercase text-blue-400 font-medium mb-3">Know About Me</p>
                 <h2 className="text-4xl md:text-6xl font-bold text-white leading-tight">
-                  Full-Stack Developer and a little bit of{' '}
+                  Full-Stack Engineer and a little bit of{' '}
                   <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent animate-gradient-x bg-[length:200%_200%] pr-1">
                     everything
                   </span>
@@ -45,11 +45,11 @@ const About = () => {
 
               <div className="space-y-5 text-lg text-gray-300 leading-relaxed">
                 <motion.p variants={itemVariants}>
-                  Full Stack Developer with 3+ years of experience shipping production SaaS features at scale. Specialized in React, Next.js, Node.js, and PHP with expertise in building automation platforms, MCP servers, and AI-powered tooling across 1,500+ connected services.
+                  Full Stack Engineer with 3+ years of production experience shipping AI-powered features on a SaaS platform used by 12 million+ people. I architected and own a customer-facing AI Agent system - a multi-LLM, tool-calling loop with persistent memory - embedded in a no-code automation platform with 1,500+ integrations.
                 </motion.p>
 
                 <motion.p variants={itemVariants}>
-                  Built and shipped major features end-to-end: OttoKit Tables, Forms, a customer-facing MCP server platform with multi-LLM support, and led the SureDash migration from WordPress to Next.js with a 25% performance gain.
+                  I specialize in agentic AI systems, MCP server development, event-driven architecture, and high-performance API design. I've built OttoKit Tables and Forms end-to-end, shipped multi-LLM support across 16+ models, and led the SureDash migration from a WordPress monolith to Next.js with a 25% performance gain.
                 </motion.p>
 
                 <motion.p variants={itemVariants} className="font-medium text-white text-xl">

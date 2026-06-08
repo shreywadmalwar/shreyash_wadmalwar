@@ -1,16 +1,40 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
 const stats = [
+  { value: '12M+', label: 'Users Reached' },
   { value: '3+', label: 'Years Experience' },
-  { value: '1,500+', label: 'Connected Services' },
-  { value: '25%', label: 'Performance Gains' },
+  { value: '1,500+', label: 'Integrations' },
   { value: '16+', label: 'LLM Models' }
 ];
 
 const Hero = ({ scrollToSection }) => {
+  // Soft spotlight that tracks the cursor - a calm, GPU-cheap radial gradient rather than
+  // a heavy particle field, so it reads as polish without slowing the first paint.
+  const [glow, setGlow] = useState({ x: 50, y: 35 });
+
+  const handleMouseMove = (e) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    setGlow({
+      x: ((e.clientX - rect.left) / rect.width) * 100,
+      y: ((e.clientY - rect.top) / rect.height) * 100
+    });
+  };
+
   return (
-    <section id="hero" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-black via-gray-900 to-black relative overflow-hidden pb-20">
+    <section
+      id="hero"
+      onMouseMove={handleMouseMove}
+      className="min-h-screen flex items-center justify-center bg-gradient-to-br from-black via-gray-900 to-black relative overflow-hidden pb-20"
+    >
+      {/* Cursor-tracking spotlight */}
+      <div
+        className="pointer-events-none absolute inset-0 transition-[background] duration-300 ease-out"
+        style={{
+          background: `radial-gradient(600px circle at ${glow.x}% ${glow.y}%, rgba(99,102,241,0.18), transparent 60%)`
+        }}
+      />
+
       {/* Background orbs */}
       <div className="orb w-72 h-72 bg-blue-600/20 top-1/4 left-1/4" style={{ animationDelay: '0s' }} />
       <div className="orb w-96 h-96 bg-purple-600/15 bottom-1/4 right-1/4" style={{ animationDelay: '-3s' }} />
@@ -46,7 +70,7 @@ const Hero = ({ scrollToSection }) => {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-lg md:text-xl lg:text-2xl text-gray-300 mb-6 md:mb-8 font-light"
         >
-          Full Stack Developer
+          Full Stack Engineer · AI/LLM Integration · Developer Tooling
         </motion.p>
 
         <motion.p
@@ -55,7 +79,7 @@ const Hero = ({ scrollToSection }) => {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="text-base md:text-lg text-gray-400 mb-10 md:mb-14 max-w-2xl mx-auto font-light"
         >
-          Shipping production SaaS features · React, Next.js, Node.js, PHP · MCP & AI integrations · 1,500+ connected services
+          I build customer-facing agentic AI systems on a SaaS platform used by 12M+ users - multi-LLM tool-calling loops, MCP servers, and high-performance APIs across 1,500+ integrations.
         </motion.p>
 
         <motion.div

@@ -71,6 +71,13 @@ body {
 .gradient-border {
   position: relative;
   border: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+/* Tasteful hover-lift: cards rise slightly and pick up a soft blue shadow,
+   pairing with the gradient border that fades in on the same hover. */
+.gradient-border:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 40px rgba(59, 130, 246, 0.12);
 }
 .gradient-border::before {
   content: "";
@@ -214,4 +221,17 @@ body {
   background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: shimmer 3s ease-in-out infinite;
+}
+
+/* Respect users who ask for less motion: kill looping/entrance animations and
+   long transitions so the site is calm and accessible rather than busy. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
 }

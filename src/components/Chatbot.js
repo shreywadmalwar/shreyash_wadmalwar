@@ -3,60 +3,82 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const knowledge = {
   name: 'Shreyash Wadmalwar',
-  role: 'Full Stack Developer',
+  role: 'Full Stack Engineer',
   email: 'sdwadmalwar@gmail.com',
   phone: '+91-7744889427',
   linkedin: 'https://www.linkedin.com/in/shreyash-wadmalwar',
   github: 'https://github.com/shreywadmalwar',
-  location: 'Remote, India',
+  location: 'Pune, India (Remote)',
   company: 'Brainstorm Force',
   companyPeriod: 'April 2023 - Present',
-  summary: 'Full Stack Developer with 3+ years of experience shipping production SaaS features at scale. Specialized in React, Next.js, Node.js, and PHP with expertise in building automation platforms, MCP servers, and AI-powered tooling across 1,500+ connected services.',
+  summary: 'Full Stack Engineer with 3+ years of production experience shipping AI-powered features on a SaaS platform used by 12 million+ users. He architected and owns a customer-facing AI Agent system - a multi-LLM, tool-calling loop with persistent memory - embedded in a no-code automation platform with 1,500+ integrations. Specializes in agentic AI systems, MCP server development, event-driven architecture, and high-performance API design.',
   skills: {
     frontend: ['React', 'Next.js', 'JavaScript (ES6+)', 'TypeScript', 'Redux', 'Tailwind CSS', 'HTML5', 'CSS3', 'Responsive UI Design'],
-    backend: ['Node.js (Express)', 'PHP (Laravel)', 'RESTful APIs', 'WordPress plugin architecture'],
-    databases: ['MySQL', 'PostgreSQL', 'Redis', 'ClickHouse', 'AWS'],
-    tools: ['Git', 'GitHub', 'npm/Yarn', 'Postman', 'AWS Lambda', 'Webpack'],
-    ai: ['OpenAI API', 'Anthropic Claude API', 'Google Gemini API', 'MCP Server Development', 'LLM Integration', 'AI Agent Tooling'],
-    specializations: ['SaaS architecture', 'API design', 'Performance optimization', 'Event-driven systems', 'MCP server development']
+    backend: ['Node.js (Express)', 'PHP (Laravel)', 'Python', 'RESTful APIs', 'GraphQL', 'WebSockets', 'WordPress plugin architecture'],
+    databases: ['MySQL', 'PostgreSQL', 'Redis', 'ClickHouse', 'AWS', 'AWS Lambda'],
+    tools: ['Git', 'GitHub', 'Jest', 'npm/Yarn', 'Postman', 'Webpack'],
+    ai: ['Agentic AI Systems', 'Tool-Calling Loops', 'Persistent Memory Design', 'MCP Server Development', 'OpenAI API', 'Anthropic Claude API', 'Google Gemini API', 'Multi-LLM Provider Integration'],
+    specializations: ['SaaS architecture', 'Agentic AI systems', 'Event-driven systems', 'Performance optimization', 'API design']
   },
   projects: [
     {
       name: 'OttoKit',
-      description: 'No-code automation platform enabling users to create workflows, build forms, manage data tables, and integrate with 1,500+ external services.',
+      description: 'No-code automation platform with 1,500+ integrations, used by 12 million+ users.',
       highlights: [
+        'Architected and shipped a customer-facing AI Agent system: a multi-turn, tool-calling loop where the LLM autonomously selects from 1,500+ integration actions, executes them, processes results, and loops until the task is done or a run limit is hit',
+        'Implemented persistent conversational memory per session: stores the last 20 messages in full, then compresses older history with a lightweight model (Claude Haiku) to keep context relevant without blowing token budgets',
+        'Integrated 16+ LLM models across OpenAI, Anthropic, and Google via a unified provider abstraction, letting users bring their own key and pick their model per agent',
         'Built a customer-facing MCP server platform exposing 1,500+ integration actions as AI-callable tools, compatible with Claude Desktop, Cursor IDE, and ChatGPT',
-        'Built multi-LLM support for 16+ models across OpenAI, Anthropic, and Google',
-        'Built OttoKit Forms from scratch with drag-and-drop builder, AI form generation, secure public deployment, and automatic data sync to OttoKit Tables',
-        'Built OttoKit Tables from scratch with CSV import/export, fulltext search, filters, sorting, linked records, and plan-based row limits',
-        'Built a Global Variables system with encryption for managing secrets securely across workflow executions',
-        'Improved API performance by 25% using REST refactoring, Redis caching, and async job queues',
         'Designed an event-driven system with 50+ domain events for real-time automation across 170+ integrations via WebSocket',
-        'Fixed security vulnerabilities including SSRF, XSS, open redirects, and CSS injection; improved accessibility to WCAG 2.2 Level AA',
-        'Built WordPress plugin integrations for Store Engine, LatePoint, and SureDash'
+        'Improved API response time by 25% using REST refactoring, Redis caching, and async job queues',
+        'Built OttoKit Forms and OttoKit Tables from scratch, plus a Global Variables system with encryption for managing secrets',
+        'Fixed security vulnerabilities including SSRF, XSS, open redirects, and CSS injection; improved accessibility to WCAG 2.2 Level AA'
       ]
     },
     {
       name: 'SureDash',
       description: 'Community engagement platform for user discussions and content management.',
       highlights: [
-        'Led React migration from WordPress monolith to Next.js, improving performance by 25%',
-        'Built reusable component library with optimized PHP REST APIs, replacing legacy AJAX handlers'
+        'Led the React to Next.js migration from a WordPress monolith, reducing page load time by 25% via code splitting, SSR, and lazy loading; improved Core Web Vitals across LCP, CLS, and FID',
+        'Built a reusable component library with optimized PHP REST APIs, replacing legacy AJAX handlers',
+        'Implemented SSG for static content and SSR for dynamic discussion threads, improving SEO and time-to-first-byte'
+      ]
+    }
+  ],
+  sideProjects: [
+    {
+      name: 'AI Agent Playground',
+      description: 'A multi-LLM agentic evaluation framework that compares how 7 models reason through the same prompt using live tool-calling.',
+      url: 'https://shreywadmalwar.github.io/ai-agent-playground/',
+      highlights: [
+        'Shared agentic driver loop with live per-model status, across 7 providers via two streaming adapters',
+        'Four client-side tools from a single JSON Schema, converted per-provider; a leaderboard tracks response time and tool-call usage'
+      ]
+    },
+    {
+      name: 'Notion-Style Block Editor',
+      description: 'A Notion-inspired, fully client-side block editor with no backend required.',
+      url: 'https://shreywadmalwar.github.io/notion-block-editor/',
+      highlights: [
+        'Nine block types with a slash-command picker, drag-and-drop reordering via @dnd-kit, and list nesting',
+        'Autosave to localStorage, export to Markdown and PDF, with persistence behind a single swappable service layer'
       ]
     }
   ],
   education: [
-    { degree: 'Bachelor of Engineering (Computer Science)', institution: 'Savitribai Phule Pune University, Pune, India', year: 'Graduated: June 2023' },
-    { degree: '12th HSC Boards', institution: 'St. George Jr. College, Nagpur, India', year: 'March 2019' }
+    { degree: 'B.Eng in Computer Science', institution: 'Savitribai Phule Pune University, Pune, India', year: '2019 - 2023 (Graduated June 2023)' },
+    { degree: 'HSC (12th Grade), Science', institution: 'St. George Jr. College, Nagpur, India', year: '2017 - 2019' }
   ],
-  languages: 'English (Fluent), Marathi (Fluent), Hindi (Native)',
+  certificates: ['Introduction to Artificial Intelligence (AI) - IBM', 'Generative AI: Introduction and Applications - IBM', 'Python Certificate of Accomplishment - HackerRank', 'Enterprise WordPress Security - WPVIP'],
+  achievements: ['Solved 500+ DSA problems across multiple platforms', 'Solved 150+ LeetCode problems'],
+  languages: 'English (Fluent), Hindi (Native), Marathi (Fluent)',
   strengths: 'Problem-solving, cross-functional collaboration, technical documentation, ownership mentality'
 };
 
 const qaPatterns = [
   {
     keywords: ['who', 'about', 'yourself', 'introduce', 'tell me about'],
-    answer: () => `${knowledge.name} is a ${knowledge.role} at ${knowledge.company} with 3+ years of experience shipping production SaaS features. He specializes in React, Next.js, Node.js, and PHP, building automation platforms, MCP servers, and AI-powered tooling across 1,500+ connected services.`
+    answer: () => `${knowledge.name} is a ${knowledge.role} at ${knowledge.company} with 3+ years of experience shipping AI-powered features on a SaaS platform used by 12 million+ users. He architected and owns a customer-facing AI Agent system - a multi-LLM, tool-calling loop with persistent memory - and specializes in agentic AI systems, MCP server development, event-driven architecture, and high-performance APIs.`
   },
   {
     keywords: ['contact', 'email', 'reach', 'mail', 'phone', 'call', 'number'],
@@ -75,24 +97,32 @@ const qaPatterns = [
     answer: () => `Shreyash's backend skills: ${knowledge.skills.backend.join(', ')}. He's improved API performance by 25% using REST refactoring, Redis caching, and async job queues. He also designed event-driven systems with 50+ domain events for real-time automation.`
   },
   {
-    keywords: ['ai', 'llm', 'mcp', 'openai', 'claude', 'gemini', 'gpt', 'artificial intelligence', 'machine learning'],
-    answer: () => `Shreyash has strong AI/LLM expertise:\n\n• Built a customer-facing MCP server platform with 1,500+ AI-callable tools\n• Compatible with Claude Desktop, Cursor IDE, and ChatGPT\n• Multi-LLM support for 16+ models across OpenAI, Anthropic, and Google\n• Skills: ${knowledge.skills.ai.join(', ')}`
+    keywords: ['ai', 'llm', 'mcp', 'openai', 'claude', 'gemini', 'gpt', 'agent', 'agentic', 'memory', 'artificial intelligence', 'machine learning'],
+    answer: () => `Shreyash specializes in agentic AI systems:\n\n• Architected a customer-facing AI Agent - a multi-turn, tool-calling loop where the LLM autonomously picks from 1,500+ actions and loops until done\n• Implemented persistent memory: last 20 messages kept in full, older history compressed with Claude Haiku\n• Integrated 16+ models across OpenAI, Anthropic, and Google with bring-your-own-key per agent\n• Built an MCP server platform exposing 1,500+ AI-callable tools (Claude Desktop, Cursor IDE, ChatGPT)\n• Skills: ${knowledge.skills.ai.join(', ')}`
   },
   {
     keywords: ['experience', 'work', 'job', 'company', 'where', 'brainstorm'],
-    answer: () => `Shreyash works as a Software Developer at **${knowledge.company}** (${knowledge.companyPeriod}, ${knowledge.location}). He's worked on two major products:\n\n**OttoKit** -${knowledge.projects[0].description}\n\n**SureDash** -${knowledge.projects[1].description}`
+    answer: () => `Shreyash works as a ${knowledge.role} at **${knowledge.company}** (${knowledge.companyPeriod}, ${knowledge.location}). He's worked on two major products:\n\n**OttoKit** - ${knowledge.projects[0].description}\n\n**SureDash** - ${knowledge.projects[1].description}`
   },
   {
     keywords: ['ottokit', 'automation', 'workflow', 'zapier'],
-    answer: () => `**OttoKit** -${knowledge.projects[0].description}\n\nKey achievements:\n${knowledge.projects[0].highlights.map(h => `• ${h}`).join('\n')}`
+    answer: () => `**OttoKit** - ${knowledge.projects[0].description}\n\nKey achievements:\n${knowledge.projects[0].highlights.map(h => `• ${h}`).join('\n')}`
   },
   {
     keywords: ['suredash', 'community', 'dashboard', 'migration'],
-    answer: () => `**SureDash** -${knowledge.projects[1].description}\n\nKey achievements:\n${knowledge.projects[1].highlights.map(h => `• ${h}`).join('\n')}`
+    answer: () => `**SureDash** - ${knowledge.projects[1].description}\n\nKey achievements:\n${knowledge.projects[1].highlights.map(h => `• ${h}`).join('\n')}`
   },
   {
-    keywords: ['project', 'built', 'build', 'portfolio', 'what have you'],
-    answer: () => `Shreyash has worked on two major products at ${knowledge.company}:\n\n**OttoKit** -${knowledge.projects[0].description}\nHighlights: MCP server with 1,500+ tools, OttoKit Tables, OttoKit Forms, 25% API performance improvement.\n\n**SureDash** -${knowledge.projects[1].description}\nHighlights: WordPress to Next.js migration with 25% performance gain.`
+    keywords: ['project', 'built', 'build', 'portfolio', 'what have you', 'side project', 'playground', 'editor', 'eval', 'notion'],
+    answer: () => `At ${knowledge.company}, Shreyash shipped **OttoKit** (an AI automation platform for 12M+ users) and led the **SureDash** Next.js migration.\n\nHe also builds personal projects:\n\n**${knowledge.sideProjects[0].name}** - ${knowledge.sideProjects[0].description}\n${knowledge.sideProjects[0].url}\n\n**${knowledge.sideProjects[1].name}** - ${knowledge.sideProjects[1].description}\n${knowledge.sideProjects[1].url}\n\nBoth are live and embedded in the Projects section above.`
+  },
+  {
+    keywords: ['certificate', 'certification', 'certified', 'course', 'ibm', 'hackerrank'],
+    answer: () => `Shreyash's certifications:\n${knowledge.certificates.map(c => `• ${c}`).join('\n')}`
+  },
+  {
+    keywords: ['achievement', 'dsa', 'leetcode', 'competitive', 'problem solving'],
+    answer: () => `Shreyash's achievements:\n${knowledge.achievements.map(a => `• ${a}`).join('\n')}`
   },
   {
     keywords: ['education', 'degree', 'college', 'university', 'study', 'school', 'qualification'],
@@ -142,9 +172,9 @@ const qaPatterns = [
 
 const suggestedQuestions = [
   'Who is Shreyash?',
+  'Tell me about the AI Agent system',
+  'What are his side projects?',
   'What are his skills?',
-  'Tell me about OttoKit',
-  'What AI experience does he have?',
   'How can I contact him?',
   'What\'s his education?'
 ];

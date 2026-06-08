@@ -2,6 +2,36 @@ import React, { useState, useEffect } from 'react';
 
 const Contact = ({ isDrawerOpen, setIsDrawerOpen }) => {
   const [activeTab, setActiveTab] = useState('connect');
+  // idle | sending | success | error — drives the submit button + status banner.
+  const [formStatus, setFormStatus] = useState('idle');
+
+  // FormSubmit.co needs no API key: it forwards submissions to the address in the
+  // endpoint. The very first submission triggers a one-time activation email that
+  // must be confirmed once; after that, messages arrive straight in the inbox.
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const form = e.target;
+    setFormStatus('sending');
+    try {
+      const res = await fetch('https://formsubmit.co/ajax/sdwadmalwar@gmail.com', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          name: form.name.value,
+          email: form.email.value,
+          message: form.message.value,
+          _subject: 'New message from your portfolio',
+          _template: 'table',
+          _captcha: 'false'
+        })
+      });
+      if (!res.ok) throw new Error('Request failed');
+      setFormStatus('success');
+      form.reset();
+    } catch {
+      setFormStatus('error');
+    }
+  };
 
   useEffect(() => {
     if (!isDrawerOpen) return;
@@ -148,46 +178,54 @@ const Contact = ({ isDrawerOpen, setIsDrawerOpen }) => {
 
               {activeTab === 'form' && (
                 <div className="mt-6">
-                  <form 
-                    className="space-y-4"
-                    action="mailto:sdwadmalwar@gmail.com"
-                    method="post"
-                    encType="text/plain"
-                  >
-                    <div>
-                      <input
-                        type="email"
-                        name="email"
-                        placeholder="Wanna hear back? Add you email"
-                        className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                        required
-                      />
+                  {formStatus === 'success' ? (
+                    <div className="rounded-lg border border-green-400/30 bg-green-400/10 p-6 text-center">
+                      <p className="text-green-700 dark:text-green-300 font-medium">Thanks! Your message is on its way.</p>
+                      <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">Shreyash will get back to you soon.</p>
                     </div>
-                    <div>
-                      <input
-                        type="text"
-                        name="name"
-                        placeholder="Drop a name"
-                        className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                        required
-                      />
-                    </div>
-                    <div>
-                      <textarea
-                        name="message"
-                        placeholder="Say hello or drop a message ..."
-                        rows={4}
-                        className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
-                        required
-                      />
-                    </div>
-                    <button
-                      type="submit"
-                      className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-4 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
-                    >
-                      Send Message
-                    </button>
-                  </form>
+                  ) : (
+                    <form className="space-y-4" onSubmit={handleSubmit}>
+                      <div>
+                        <input
+                          type="email"
+                          name="email"
+                          placeholder="Wanna hear back? Add your email"
+                          className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                          required
+                        />
+                      </div>
+                      <div>
+                        <input
+                          type="text"
+                          name="name"
+                          placeholder="Drop a name"
+                          className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                          required
+                        />
+                      </div>
+                      <div>
+                        <textarea
+                          name="message"
+                          placeholder="Say hello or drop a message ..."
+                          rows={4}
+                          className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
+                          required
+                        />
+                      </div>
+                      {formStatus === 'error' && (
+                        <p className="text-sm text-red-500 text-center">
+                          Something went wrong. Email me directly at sdwadmalwar@gmail.com.
+                        </p>
+                      )}
+                      <button
+                        type="submit"
+                        disabled={formStatus === 'sending'}
+                        className="w-full bg-blue-600 hover:bg-blue-700 disabled:opacity-60 disabled:cursor-not-allowed text-white font-medium py-3 px-4 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                      >
+                        {formStatus === 'sending' ? 'Sending…' : 'Send Message'}
+                      </button>
+                    </form>
+                  )}
                 </div>
               )}
             </div>
